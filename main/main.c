@@ -12,6 +12,7 @@
 #include "sdkconfig.h"
 
 #include "ble_led.h"
+#include "rotary_encoder.h"
 
 static const char *TAG = "main";
 
@@ -39,7 +40,10 @@ void app_main(void)
     ESP_LOGI(TAG, "Char UUID   : beb5483e-36e1-4688-b7f5-ea07361b26a8");
     ESP_LOGI(TAG, "Waiting for Web Bluetooth connection...");
 
-    // 3. Keep main task alive
+    // 3. Initialize KY040 Rotary Encoder
+    ESP_ERROR_CHECK(rotary_encoder_init());
+
+    // 4. Keep main task alive
     while (1) {
         vTaskDelay(pdMS_TO_TICKS(10000));
     }

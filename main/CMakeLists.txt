@@ -1,2 +1,2 @@
-idf_component_register(SRCS "main.c" "ble_led.c"
+idf_component_register(SRCS "main.c" "ble_led.c" "rotary_encoder.c"
                        INCLUDE_DIRS ".")
